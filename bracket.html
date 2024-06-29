@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Volleyball Tournament - Team Bracket</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Team Bracket</h1>
+            <h2>Teams</h2>
+        </header>
+        <main>
+            <div class="team-list">
+                <ul id="teamList">
+                    <li>Team 1</li>
+                    <li>Team 2</li>
+                    <li>Team 3</li>
+                    <li>Team 4</li>
+                    <li>Team 5</li>
+                    <li>Team 6</li>
+                    <li>Team 7</li>
+                    <li>Team 8</li>
+                    <li>Team 9</li>
+                    <li>Team 10</li>
+                </ul>
+            </div>
+            <button onclick="shuffleTeams()">Shuffle Teams</button>
+            <div id="bracket" class="bracket">
+                <!-- Pairings will be displayed here -->
+            </div>
+        </main>
+        <footer>
+            <div class="footer-links">
+                <a href="index.html">Back to Home</a>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        function shuffleTeams() {
+            const teamList = document.getElementById('teamList');
+            const bracket = document.getElementById('bracket');
+            const teams = Array.from(teamList.getElementsByTagName('li'));
+            const shuffledTeams = teams.sort(() => 0.5 - Math.random());
+            bracket.innerHTML = '';
+
+            for (let i = 0; i < shuffledTeams.length; i += 2) {
+                const team1 = shuffledTeams[i].textContent;
+                const team2 = shuffledTeams[i + 1] ? shuffledTeams[i + 1].textContent : 'BYE';
+                const pairing = document.createElement('div');
+                pairing.classList.add('pairing');
+                pairing.textContent = `${team1} vs ${team2}`;
+                bracket.appendChild(pairing);
+            }
+        }
+    </script>
+</body>
+</html>
