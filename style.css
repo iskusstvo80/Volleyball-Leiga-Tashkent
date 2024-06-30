@@ -79,7 +79,23 @@ footer {
     color: #fff;
 }
 
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
 
+.buttons a {
+    background: rgba(0, 114, 255, 0.8);
+    color: white;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.buttons a:hover {
+    background: rgba(0, 114, 255, 0.8);
+}
 
 .team-list {
     text-align: center;

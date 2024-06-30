@@ -49,7 +49,7 @@
 
             for (let i = 0; i < shuffledTeams.length; i += 2) {
                 const team1 = shuffledTeams[i].textContent;
-                const team2 = shuffledTeams[i + 1] ? shuffledTeams[i + 1].textContent : 'BYE';
+                    const team2 = shuffledTeams[i + 1] ? shuffledTeams[i + 1].textContent : 'BYE';
                 const pairing = document.createElement('div');
                 pairing.classList.add('pairing');
                 pairing.textContent = `${team1} vs ${team2}`;
