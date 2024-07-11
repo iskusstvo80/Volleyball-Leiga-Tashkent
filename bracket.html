@@ -15,21 +15,15 @@
         <main>
             <div class="team-list">
                 <ul id="teamList">
-                    <li>Команда 1</li>
-                    <li>Команда 2</li>
-                    <li>Команда 3</li>
-                    <li>Команда 4</li>
-                    <li>Команда 5</li>
-                    <li>Команда 6</li>
-                    <li>Команда 7</li>
-                    <li>Команда 8</li>
-                    <li>Команда 9</li>
-                    <li>Команда 10</li>
+                    <li><img src="avatars/alnur.png" alt="Alnur" class="team-avatar"> Alnur</li>
+                    <li><img src="avatars/team2.jpg" alt="Team 2" class="team-avatar"> Команда 2</li>
+                    
                 </ul>
             </div>
             <button onclick="shuffleTeams()">Перетасуйте команды</button>
             <div id="bracket" class="bracket">
                 <!-- Pairings will be displayed here -->
+
             </div>
         </main>
         <footer>
@@ -48,11 +42,11 @@
             bracket.innerHTML = '';
 
             for (let i = 0; i < shuffledTeams.length; i += 2) {
-                const team1 = shuffledTeams[i].textContent;
-                    const team2 = shuffledTeams[i + 1] ? shuffledTeams[i + 1].textContent : 'BYE';
+                const team1 = shuffledTeams[i].innerHTML;
+                const team2 = shuffledTeams[i + 1] ? shuffledTeams[i + 1].innerHTML : 'BYE';
                 const pairing = document.createElement('div');
                 pairing.classList.add('pairing');
-                pairing.textContent = `${team1} vs ${team2}`;
+                pairing.innerHTML = `${team1} vs ${team2}`;
                 bracket.appendChild(pairing);
             }
         }
